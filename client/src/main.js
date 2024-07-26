@@ -6,7 +6,7 @@ if (htmlContent) {
     title.innerHTML = "This is the title of the library pages!";
     htmlContent.appendChild(title);
     signup(htmlContent);
-    document.addEventListener("click");
+    //  document.addEventListener("click",)
 }
 else {
     console.log("issue accessing htmlContent");

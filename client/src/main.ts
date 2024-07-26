@@ -10,7 +10,7 @@ if (htmlContent){
     htmlContent.appendChild(title)
     signup(htmlContent)
 
-    document.addEventListener("click",)
+  //  document.addEventListener("click",)
 
 }else{
     console.log("issue accessing htmlContent")
