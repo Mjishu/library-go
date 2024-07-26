@@ -1,17 +1,15 @@
-import signup from "./components/signup"
+import './style.css'
+import typescriptLogo from './typescript.svg'
+import viteLogo from '/vite.svg'
+import signup from "./signup.ts"
 
-console.log("connected")
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+  <div>
+  </div>
+`
 
-const htmlContent = document.getElementById("content");
+const app = document.getElementById("app")
+signup(app)
 
-if (htmlContent){
-    const title = document.createElement("h1");
-    title.innerHTML = "This is the title of the library pages!"
-    htmlContent.appendChild(title)
-    signup(htmlContent)
 
-    document.addEventListener("click",)
-
-}else{
-    console.log("issue accessing htmlContent")
-}
+//setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)

@@ -1,3 +1,9 @@
+
+let userInfo = {
+    username : "",
+    password: ""
+}
+
 function signup(content){
     const signupHolder = document.createElement("div");
     
@@ -26,6 +32,7 @@ function createInputs(holder){
 
 function submitButton(holder){
     const button = document.createElement("button")
+    button.innerText = "Sign Up"
     button.type = "submit"
     button.className = "signup-button"
     button.setAttribute("id","signup-button")
