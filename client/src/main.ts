@@ -1,17 +1,11 @@
-import signup from "./components/signup"
+import './style.css'
 
-console.log("connected")
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+  <div>
+  <a href="./pages/signup.html">Sign up </a>
+  </div>
+`
 
-const htmlContent = document.getElementById("content");
 
-if (htmlContent){
-    const title = document.createElement("h1");
-    title.innerHTML = "This is the title of the library pages!"
-    htmlContent.appendChild(title)
-    signup(htmlContent)
 
-  //  document.addEventListener("click",)
-
-}else{
-    console.log("issue accessing htmlContent")
-}
+//setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
