@@ -2,7 +2,7 @@ import './style.css'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
-  <a href="./pages/signup.html">Sign up </a>
+  <a href="./src/pages/signup.html">Sign up </a>
   </div>
 `
 

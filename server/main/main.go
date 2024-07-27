@@ -32,7 +32,7 @@ func main() {
 	serv.Handle("/app/", http.StripPrefix(("/app/"), fileserver))
 
 	serv.HandleFunc("/meow", showsBasicHttp)
-	serv.HandleFunc("/signup", getSignup)
+	serv.HandleFunc("POST /api/signup", getSignup)
 
 	addr := ":" + port
 	server := &http.Server{ //what does a writetimeout and readtimeout do here

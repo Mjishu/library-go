@@ -33,5 +33,15 @@ passwordInput.addEventListener("input",(e:Event) => {
 
 form.addEventListener("submit",(e:Event)=>{
     e.preventDefault();
-    console.log(userInfo);
+
+    const fetchParams ={
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userInfo)
+    }
+
+    fetch("/api/signup",fetchParams)
+    console.log("fetched")
 })
