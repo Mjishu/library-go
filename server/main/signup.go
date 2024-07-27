@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+    "golang.org/x/crypto/bcrypt"
 )
 
 type paramters struct {
@@ -31,12 +32,19 @@ func getSignup(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+    hashedPassword,err := bcrypt.GenerateFromPassword([]byte(params.Password),bcrypt.DefaultCost)
+    if err !=nil{
+        fmt.Println("there was an error trying to hash your password")
+        return
+    }
 	user := newUser{
 		Username: params.Username,
 		Email:    params.Email,
-		Password: params.Password, //change this for bcrypt
+		Password: string(hashedPassword), //change this for bcrypt
 	}
-	fmt.Println("new user is ", user)
-
+    
+    fmt.Println()
+    fmt.Printf("Username: %s\nEmail: %s\nPassword: %s\n",user.Username,user.Email,string(user.Password))
+    
 	w.WriteHeader(http.StatusCreated)
 }
