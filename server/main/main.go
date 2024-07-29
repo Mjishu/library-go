@@ -33,6 +33,7 @@ func main() {
 
 	serv.HandleFunc("/meow", showsBasicHttp)
 	serv.HandleFunc("POST /api/signup", getSignup)
+	serv.HandleFunc("POST /api/login", getLogin)
 
 	addr := ":" + port
 	server := &http.Server{ //what does a writetimeout and readtimeout do here

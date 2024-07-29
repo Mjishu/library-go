@@ -7,8 +7,13 @@
     <title>Sign up</title>
   </head>
   <body>
+    <nav id="navbar">
+      <a href="../../index.html">Home</a>
+      <a href="#">Catalog</a>
+      <a href="#">About</a>
+      <a href="#">Profile</a>
+    </nav>
     <div id="app">
-        <a href="../../index.html">Home</a>
         <form id="sign-up-form" autocomplete="off">
             <label for="username">Username</label>
             <input type="text" id="username" name="username">
@@ -19,6 +24,7 @@
             <button type="submit">Sign Up</button>
         </form>
     </div>
-    <script type="module" src="/src/signup.ts"></script>
+    <p>or <a href="./login.html">login</a></p>
+    <script type="module" src="/src/components/signup.ts"></script>
   </body>
 </html>
