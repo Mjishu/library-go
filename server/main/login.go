@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"net/http"
 	//"golang.org/x/crypto/bcrypt"
+    
+    //libraryDb "github.com/mjishu/library/database"
 )
 
 type loginParameters struct {
@@ -33,6 +35,9 @@ func getLogin(w http.ResponseWriter, r *http.Request) {
 	fmt.Println()
 	fmt.Printf("Username is: %s\nPassword is %s\n", checkUser.Username, checkUser.Password)
 	//bcrypt.CompareHashAndPassword()
+
+    //libraryDb.DatabaseCall()
+
 
 	w.WriteHeader(http.StatusCreated)
 }

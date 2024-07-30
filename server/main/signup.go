@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"golang.org/x/crypto/bcrypt"
+    libraryDb "github.com/mjishu/library/database"
 )
 
 type parameters struct {
@@ -44,8 +45,8 @@ func getSignup(w http.ResponseWriter, r *http.Request) {
 		Password: string(hashedPassword), //change this for bcrypt
 	}
 
-	fmt.Println()
-	fmt.Printf("Username: %s\nEmail: %s\nPassword: %s\n", user.Username, user.Email, string(user.Password))
+    libraryDb.CreateUser(user.Username,user.Email,user.Password)
+    //Call a function from libraryDb that takes newUser as an argument and adds the new user to sql
 
 	w.WriteHeader(http.StatusCreated)
 }
